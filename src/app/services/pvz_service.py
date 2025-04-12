@@ -103,3 +103,45 @@ class PVZService:
                 for pvz in pvz_map.values()
             ]
             return result
+        
+
+    def close_last_reception(self, pvz_id: str, user_role: str):
+        if user_role != "employee":
+            raise ValueError("Only employees can close receptions")
+
+        with get_db() as conn:
+            cursor = conn.cursor()
+            # Проверяем существование ПВЗ
+            cursor.execute("SELECT id FROM pvzs WHERE id = %s", (pvz_id,))
+            if not cursor.fetchone():
+                raise ValueError("PVZ not found")
+
+            # Находим открытую приёмку
+            cursor.execute(
+                """
+                SELECT id, date_time, pvz_id, status
+                FROM receptions
+                WHERE pvz_id = %s AND status = 'in_progress'
+                """,
+                (pvz_id,)
+            )
+            reception = cursor.fetchone()
+            if not reception:
+                raise ValueError("No open reception found")
+
+            cursor.execute(
+                """
+                UPDATE receptions
+                SET status = 'close'
+                WHERE id = %s
+                RETURNING id, date_time, pvz_id, status
+                """,
+                (reception["id"],)
+            )
+            updated_reception = cursor.fetchone()
+            return {
+                "id": updated_reception["id"],
+                "date_time": updated_reception["date_time"],
+                "pvz_id": updated_reception["pvz_id"],
+                "status": updated_reception["status"]
+            }
