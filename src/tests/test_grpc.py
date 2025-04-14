@@ -1,11 +1,10 @@
 import grpc
-import src.app.grpc.pvz_pb2 as pvz_pb2
-import src.app.grpc.pvz_pb2_grpc as pvz_pb2_grpc
+from app.grpc import pvz_pb2
+from app.grpc import pvz_pb2_grpc
 from app.main import app
 from app.db.database import get_db
 from app.core.security import create_token
 from fastapi.testclient import TestClient
-
 client = TestClient(app)
 
 def setup_database():

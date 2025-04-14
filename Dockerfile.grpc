@@ -1,7 +1,8 @@
 FROM python:3.11-slim
 WORKDIR /app
 COPY requirements.txt .
+COPY .env .
 RUN pip install --no-cache-dir grpcio grpcio-tools psycopg2-binary python-dotenv pydantic-settings
-ENV PYTHONPATH=/app:/app/src
+ENV PYTHONPATH=/app:/src/app
 COPY src/ .
 CMD ["python", "app/grpc/server.py"]

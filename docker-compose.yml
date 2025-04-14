@@ -33,6 +33,8 @@ services:
       - "3000:3000"
     environment:
       - PYTHONPATH=/app:/app/app/grpc:/app/app/core
+    env_file: 
+    - .env
     depends_on:
       - db
     volumes:

@@ -1,2 +1,140 @@
 2025-04-14 09:45:45,630 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
 2025-04-14 09:45:45,635 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 09:50:27,350 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 09:50:27,351 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 10:23:43,572 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 10:23:43,574 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 10:35:02,610 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 10:35:02,613 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 10:36:12,348 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 10:36:12,354 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 10:54:10,342 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 10:54:10,344 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 11:11:37,044 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 11:11:37,047 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 11:14:43,516 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 11:14:43,524 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 11:14:43,526 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 11:18:30,965 [INFO] pvz_service: gRPC GetPVZList called
+2025-04-14 11:18:30,972 [ERROR] grpc._server: Exception calling application: connection to server at "localhost" (::1), port 5435 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5435 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/grpc/_server.py", line 610, in _call_behavior
+    response_or_iterator = behavior(argument, context)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/grpc/server.py", line 32, in GetPVZList
+    with get_db() as conn:
+  File "/usr/local/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/app/app/db/database.py", line 14, in get_db
+    conn = get_db_connection()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/app/app/db/database.py", line 7, in get_db_connection
+    return psycopg2.connect(
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5435 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5435 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-04-14 11:19:04,357 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 11:19:04,433 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 11:19:04,435 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 11:19:09,082 [INFO] pvz_service: gRPC GetPVZList called
+2025-04-14 11:19:09,086 [ERROR] grpc._server: Exception calling application: connection to server at "localhost" (::1), port 5435 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5435 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/grpc/_server.py", line 610, in _call_behavior
+    response_or_iterator = behavior(argument, context)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/grpc/server.py", line 32, in GetPVZList
+    with get_db() as conn:
+  File "/usr/local/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/app/app/db/database.py", line 14, in get_db
+    conn = get_db_connection()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/app/app/db/database.py", line 7, in get_db_connection
+    return psycopg2.connect(
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5435 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5435 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-04-14 11:22:29,604 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 11:22:29,612 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 11:22:29,664 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 11:25:50,810 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 11:25:50,812 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 11:25:50,821 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 11:26:38,615 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 11:26:38,618 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 11:26:38,658 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 11:26:41,340 [INFO] pvz_service: gRPC GetPVZList called
+2025-04-14 11:26:41,344 [ERROR] grpc._server: Exception calling application: connection to server at "localhost" (::1), port 5435 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5435 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/grpc/_server.py", line 610, in _call_behavior
+    response_or_iterator = behavior(argument, context)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/grpc/server.py", line 32, in GetPVZList
+    with get_db() as conn:
+  File "/usr/local/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/app/app/db/database.py", line 14, in get_db
+    conn = get_db_connection()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/app/app/db/database.py", line 7, in get_db_connection
+    return psycopg2.connect(
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5435 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5435 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-04-14 11:27:14,373 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 11:27:14,375 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 11:27:14,425 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 11:38:59,873 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 11:38:59,875 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 11:38:59,903 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 11:43:32,358 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 11:43:32,360 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 11:43:32,401 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 11:45:01,028 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 11:45:01,033 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 11:45:01,053 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 11:45:57,490 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 11:45:57,494 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 11:45:57,523 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 11:47:17,799 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 11:47:17,802 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 11:47:17,845 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 11:52:05,682 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 11:52:05,686 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 11:52:05,688 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 11:52:59,927 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 11:52:59,929 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
+2025-04-14 11:52:59,952 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 11:54:40,739 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 11:54:40,799 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 11:54:40,802 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics
