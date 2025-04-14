@@ -25,11 +25,15 @@
     DATABASE_URL=postgresql://postgres:yourpassword@db:5432/pvz_service
     JWT_SECRET=your_jwt_secret_key_123456
     ```
-3. **Сгенерируйте gRPC-файлы**:
+3. **Запустите миграцию ДБ** 
+    ```
+    python src/app/db/migrate.py
+    ```
+4. **Сгенерируйте gRPC-файлы**:
     ```
     python -m grpc_tools.protoc -Iproto --python_out=src/app/grpc --grpc_python_out=src/app/grpc proto/pvz.proto
     ```
-4. **Запустите сервисы**:
+5. **Запустите сервисы**:
     ```
     docker-compose up -d
     ```
