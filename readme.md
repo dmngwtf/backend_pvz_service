@@ -11,26 +11,28 @@
 
 Используется Docker для развертывания, PostgreSQL для данных, Python 3.11 с FastAPI, gRPC и Prometheus.
 
-## Требования
-
-- Docker и Docker Compose
-- Python 3.11+ (для разработки и тестов)
-- `make` (опционально, для удобства)
 
 ## Установка
 
 1. **Клонируйте репозиторий**:
+    ```
    git clone <repository_url>
    cd pvz-service
+   ```
 
 2. **Создайте .env**:
+    ```
     DATABASE_URL=postgresql://postgres:yourpassword@db:5432/pvz_service
     JWT_SECRET=your_jwt_secret_key_123456
+    ```
 3. **Сгенерируйте gRPC-файлы**:
+    ```
     python -m grpc_tools.protoc -Iproto --python_out=src/app/grpc --grpc_python_out=src/app/grpc proto/pvz.proto
+    ```
 4. **Запустите сервисы**:
+    ```
     docker-compose up -d
-
+    ```
 **Структура прокта**:
 ```
 pvz-service/
