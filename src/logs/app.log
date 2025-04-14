@@ -1,0 +1,2 @@
+2025-04-14 09:45:45,630 [INFO] pvz_service: Starting Prometheus metrics server on port 9000
+2025-04-14 09:45:45,635 [INFO] pvz_service: Metrics server running. Access at http://localhost:9000/metrics

@@ -6,8 +6,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8081:8081"
-    environment:
-      - PYTHONPATH=/app:/app/app/grpc:/app/app/core
     env_file:
       - .env
     depends_on:
@@ -21,8 +19,6 @@ services:
       dockerfile: Dockerfile.metrics
     ports:
       - "9000:9000"
-    environment:
-      - PYTHONPATH=/app:/app/app/core
     volumes:
       - ./src:/app
   grpc:
@@ -31,8 +27,6 @@ services:
       dockerfile: Dockerfile.grpc
     ports:
       - "3000:3000"
-    environment:
-      - PYTHONPATH=/app:/app/app/grpc:/app/app/core
     depends_on:
       - db
     volumes:
@@ -49,3 +43,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
 volumes:
   postgres_data:
+\q
+/q
+c
+

@@ -52,3 +52,29 @@ def test_get_pvz_list():
     )
     assert response.status_code == 200
     assert isinstance(response.json(), list)
+
+def test_get_pvz_list_with_filters():
+    setup_database()
+    token_moderator = create_token({"role": "moderator"})
+    pvz_response = client.post(
+        "/pvz",
+        json={"city": "Москва"},
+        headers={"Authorization": f"Bearer {token_moderator}"}
+    )
+    pvz_id = pvz_response.json()["id"]
+
+    token_employee = create_token({"role": "employee"})
+    client.post(
+        "/receptions",
+        json={"pvz_id": pvz_id},
+        headers={"Authorization": f"Bearer {token_employee}"}
+    )
+
+    start_date = "2025-01-01T00:00:00"
+    end_date = "2025-12-31T23:59:59"
+    response = client.get(
+        f"/pvz?page=1&limit=10&start_date={start_date}&end_date={end_date}",
+        headers={"Authorization": f"Bearer {token_employee}"}
+    )
+    assert response.status_code == 200
+    assert len(response.json()) > 0

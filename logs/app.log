@@ -1,0 +1,38 @@
+2025-04-12 19:13:11,326 [INFO] pvz_service: Dummy login attempt with role: string
+2025-04-12 19:13:11,327 [ERROR] pvz_service: Invalid role provided: string
+2025-04-12 19:13:21,644 [INFO] pvz_service: Dummy login attempt with role: moderator
+2025-04-12 19:27:27,514 [INFO] pvz_service: Dummy login attempt with role: string
+2025-04-12 19:27:27,514 [ERROR] pvz_service: Invalid role provided: string
+2025-04-12 19:27:29,182 [INFO] pvz_service: Dummy login attempt with role: string
+2025-04-12 19:27:29,183 [ERROR] pvz_service: Invalid role provided: string
+2025-04-12 19:27:43,451 [ERROR] pvz_service: Invalid role provided: string
+2025-04-12 19:28:38,273 [INFO] pvz_service: Dummy login attempt with role: string
+2025-04-12 19:28:38,273 [ERROR] pvz_service: Invalid role provided: string
+2025-04-12 20:32:57,078 [ERROR] pvz_service: Invalid role provided: string
+2025-04-12 17:36:46,879 [INFO] pvz_service: Dummy login attempt with role: moderator
+2025-04-12 17:37:01,150 [INFO] pvz_service: Attempting to create PVZ in city: Москва by role: moderator
+2025-04-12 17:37:12,512 [INFO] pvz_service: Attempting to create PVZ in city: Москва by role: moderator
+2025-04-12 17:40:45,934 [INFO] pvz_service: Attempting to create reception for PVZ: 460098a8-d03f-4bec-8992-da6d9aa4c3ae by role: employee
+2025-04-12 17:43:24,800 [INFO] pvz_service: Attempting to add product of type: электроника to PVZ: 026646c4-65bc-4ef3-bce3-d3525709e073 by role: employee
+0:32,037 [INFO] pvz_service: Dummy login attempt with role: employee
+2025-04-12 20:41:14,063 [INFO] pvz_service: Attempting to create reception for PVZ: 026646c4-65bc-4ef3-bce3-d3525709e073 by role: employee
+2025-04-12 20:41:14,101 [INFO] pvz_service: Reception created: 0940bcb5-2ab8-4d2e-95a2-5e9101e484f2
+2025-04-12 20:43:36,607 [INFO] pvz_service: Attempting to add product of type: электроника to PVZ: 026646c4-65bc-4ef3-bce3-d3525709e073 by role: employee
+2025-04-12 20:43:36,658 [INFO] pvz_service: Product added: f7d01c06-8865-4a8c-9abd-d5768f4e23c0
+2025-04-13 12:10:29,133 [INFO] pvz_service: Attempting to create PVZ in city: Москва by role: moderator
+2025-04-13 12:10:29,343 [INFO] pvz_service: PVZ created: 773e8fd7-f09e-490f-8c02-8641967f67a8
+2025-04-14 11:12:34,321 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 08:15:15,585 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 09:18:51,173 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 09:19:33,143 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 09:21:02,752 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 09:22:29,317 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 09:22:49,892 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 09:25:30,205 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 09:25:49,159 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 09:26:17,052 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 09:26:51,640 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 09:28:36,941 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 09:45:13,538 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 09:45:32,366 [INFO] pvz_service: gRPC server started on port 3000
+2025-04-14 09:45:45,886 [INFO] pvz_service: gRPC server started on port 3000

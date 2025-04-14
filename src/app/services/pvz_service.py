@@ -1,12 +1,19 @@
 from uuid import uuid4
 from datetime import datetime
 from app.db.database import get_db
+from app.core.custom_logging import setup_logging
+from app.core.metrics import PVZ_CREATED
+
+logger = setup_logging()
 
 class PVZService:
     def create_pvz(self, city: str, user_role: str):
+        logger.info(f"Attempting to create PVZ in city: {city} by role: {user_role}")
         if user_role != "moderator":
+            logger.error("Unauthorized attempt to create PVZ")
             raise ValueError("Only moderators can create PVZ")
         if city not in ["Москва", "Санкт-Петербург", "Казань"]:
+            logger.error(f"Invalid city: {city}")
             raise ValueError("Invalid city")
 
         pvz_id = str(uuid4())
@@ -23,6 +30,8 @@ class PVZService:
                 (pvz_id, registration_date, city)
             )
             pvz = cursor.fetchone()
+            PVZ_CREATED.inc()
+            logger.info(f"PVZ created: {pvz['id']}")
             return {
                 "id": pvz["id"],
                 "registration_date": pvz["registration_date"],
@@ -30,6 +39,7 @@ class PVZService:
             }
 
     def get_pvz_list(self, start_date: datetime | None, end_date: datetime | None, page: int, limit: int):
+        logger.info(f"Fetching PVZ list: page={page}, limit={limit}, start_date={start_date}, end_date={end_date}")
         offset = (page - 1) * limit
         query = """
             SELECT p.id, p.registration_date, p.city,
@@ -102,10 +112,12 @@ class PVZService:
                 }
                 for pvz in pvz_map.values()
             ]
+            logger.info(f"Fetched {len(result)} PVZ records")
             return result
         
 
     def close_last_reception(self, pvz_id: str, user_role: str):
+        logger.info(f"Attempting to close reception for PVZ: {pvz_id}")
         if user_role != "employee":
             raise ValueError("Only employees can close receptions")
 
@@ -139,6 +151,7 @@ class PVZService:
                 (reception["id"],)
             )
             updated_reception = cursor.fetchone()
+            logger.info(f"Reception closed: {updated_reception['id']}")
             return {
                 "id": updated_reception["id"],
                 "date_time": updated_reception["date_time"],

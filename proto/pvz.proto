@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package pvz;
+
+option go_package = "./proto";
+
+service PVZService {
+    rpc GetPVZList (GetPVZListRequest) returns (GetPVZListResponse);
+}
+
+message GetPVZListRequest {}
+
+message PVZ {
+    string id = 1;
+    string registration_date = 2;
+    string city = 3;
+}
+
+message GetPVZListResponse {
+    repeated PVZ pvzs = 1;
+}

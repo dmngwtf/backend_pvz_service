@@ -1,0 +1,9 @@
+FROM python:3.11-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir prometheus-client pydantic-settings fastapi
+ENV PYTHONPATH=/app:/app/src
+COPY src/app/core/metrics.py .
+COPY src/app/core/custom_logging.py .
+COPY src/app/main_metrics.py .
+CMD ["python", "app/main_metrics.py"]
